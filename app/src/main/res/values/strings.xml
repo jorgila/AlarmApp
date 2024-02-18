@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AlarmApp</string>
+    <string name="seconds">Tras un tiempo en segundos</string>
+    <string name="minutes">Tras un tiempo en minutos</string>
+    <string name="hours">Tras un tiempo en horas</string>
+    <string name="días">Tras un tiempo en días</string>
+</resources>

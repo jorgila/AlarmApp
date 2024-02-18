@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="md_cardElevation">12sp</dimen>
+    <dimen name="bfs">24sp</dimen>
+    <dimen name="mfs">20sp</dimen>
+    <dimen name="sfs">16sp</dimen>
+</resources>
