@@ -1,4 +1,4 @@
-package com.estholon.alarmapp.adapters
+package com.estholon.alarmapp.data.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

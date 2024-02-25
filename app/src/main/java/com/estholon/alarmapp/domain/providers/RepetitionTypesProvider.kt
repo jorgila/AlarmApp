@@ -1,4 +1,4 @@
-package com.estholon.alarmapp.providers
+package com.estholon.alarmapp.domain.providers
 
 import android.content.Context
 import com.estholon.alarmapp.R

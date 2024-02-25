@@ -1,4 +1,4 @@
-package com.estholon.alarmapp
+package com.estholon.alarmapp.ui.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,13 +15,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initUI()
         initListeners()
+
+    }
+
+    private fun initUI() {
 
     }
 
     private fun initListeners() {
         binding.btnAdd.setOnClickListener{
-            val intent = Intent(this,NewAlarmActivity::class.java)
+            val intent = Intent(this, NewAlarmActivity::class.java)
             startActivity(intent)
         }
     }

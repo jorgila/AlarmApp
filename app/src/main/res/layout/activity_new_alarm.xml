@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewAlarmActivity">
+    tools:context=".ui.views.NewAlarmActivity">
 
     <!-- APP BAR -->
     <include
@@ -18,35 +18,37 @@
     <!-- TITTLE -->
 
     <TextView
-        android:id="@+id/tvTittle"
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitle"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/ab"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="NUEVA ALARMA"
         android:textSize="20sp"
+        android:layout_margin="18dp"
         />
 
     <!-- TITTLE -->
 
     <TextView
-        android:id="@+id/tvTittleTittle"
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitleTitle"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvTittle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Título:"
         android:textSize="16sp"
+        android:layout_marginVertical="8dp"
         />
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/tilTittle"
+        android:id="@+id/tilTitle"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvTittleTittle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_gravity="center"
@@ -57,7 +59,7 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieTittle"
+            android:id="@+id/tieTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:singleLine="true"
@@ -70,13 +72,15 @@
 
     <TextView
         android:id="@+id/tvDateTittle"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilTittle"
+        app:layout_constraintTop_toBottomOf="@+id/tilTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Fecha:"
         android:textSize="16sp"
+        android:layout_marginVertical="8dp"
+
         />
 
 
@@ -101,7 +105,8 @@
             android:layout_height="match_parent"
             android:singleLine="true"
             android:textSize="@dimen/mfs"
-            android:inputType="date"
+            android:inputType="none"
+            android:editable="false"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -110,13 +115,15 @@
 
     <TextView
         android:id="@+id/tvHourTittle"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tilDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Hora:"
         android:textSize="16sp"
+        android:layout_marginVertical="8dp"
+
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -140,7 +147,7 @@
             android:layout_height="match_parent"
             android:singleLine="true"
             android:textSize="@dimen/mfs"
-            android:inputType="time"
+            android:editable="false"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -150,13 +157,14 @@
 
     <TextView
         android:id="@+id/tvRepetitionTittle"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tilHour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Repetición:"
         android:textSize="16sp"
+        android:layout_marginVertical="8dp"
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -214,13 +222,15 @@
 
     <TextView
         android:id="@+id/tvMessageTittle"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/tilRepetition"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Mensaje:"
         android:textSize="16sp"
+        android:layout_marginVertical="8dp"
+
         />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -242,7 +252,8 @@
             android:id="@+id/tieMessage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:singleLine="true"
+            android:inputType="textMultiLine"
+            android:lines="3"
             android:textSize="@dimen/mfs"
             />
 
@@ -255,6 +266,10 @@
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tilMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="18dp"
         android:text="Añadir"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

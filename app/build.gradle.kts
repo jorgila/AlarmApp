@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    //LocalDB
+    id("kotlin-kapt")
 }
 
 android {
@@ -47,10 +49,19 @@ android {
 }
 
 dependencies {
-    
+
+    //ViewModel
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation ("androidx.activity:activity-ktx:1.8.2")
+
     //Binding
     implementation ("androidx.databinding:databinding-runtime:8.2.2")
     implementation ("androidx.databinding:viewbinding:8.2.2")
+
+    // LocalDB
+    implementation ("androidx.room:room-ktx:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
+    implementation ("androidx.room:room-runtime:2.6.1")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
