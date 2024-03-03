@@ -27,6 +27,7 @@ class NewAlarmActivityViewModel(private val application: Application) : ViewMode
         repetition_type: String,
         repetition_time: Int,
         message: String,
+        status: Boolean
     ){
 
         viewModelScope.launch {
@@ -38,7 +39,8 @@ class NewAlarmActivityViewModel(private val application: Application) : ViewMode
                     start_hour,
                     repetition_type,
                     repetition_time,
-                    message
+                    message,
+                    status
                 )
             )
         }

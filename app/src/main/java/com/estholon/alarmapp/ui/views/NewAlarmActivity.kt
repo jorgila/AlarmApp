@@ -86,6 +86,7 @@ class NewAlarmActivity : AppCompatActivity() {
                     binding.tieRepetitionType.text.toString(),
                     binding.tieRepetition.text.toString().toInt(),
                     binding.tieMessage.text.toString(),
+                    true
                 )
 
                 val intent = Intent(this,MainActivity::class.java)

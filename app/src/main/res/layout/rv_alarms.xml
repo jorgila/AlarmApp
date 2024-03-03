@@ -6,6 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintTop_toTopOf="@id/cvAlarm"
+        app:layout_constraintEnd_toEndOf="@id/cvAlarm"
+        android:elevation="10dp"
+        android:layout_margin="20dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAlarm"
@@ -28,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
->
+                >
                 <TextView
                     android:id="@+id/tvHour"
                     android:layout_width="match_parent"
@@ -148,6 +157,8 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

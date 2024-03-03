@@ -1,6 +1,8 @@
 package com.estholon.alarmapp.data.adapters
 
+import android.opengl.Visibility
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -15,11 +17,13 @@ class AlarmsAdapter: ListAdapter<Alarm, AlarmsAdapter.AlarmsViewHolder>(DiffCall
 
     var clickListener : ClickListener? = null
 
-    // Show data, Know what to do with the data
+    //
 
     class AlarmsViewHolder(private var binding: RvAlarmsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(alarm: Alarm, clickListener: ClickListener?) {
+
+            // SET VALUES
 
             binding.tvTitle.text = alarm.title
             binding.tvDetailsDate.text = alarm.start_date
@@ -27,6 +31,42 @@ class AlarmsAdapter: ListAdapter<Alarm, AlarmsAdapter.AlarmsViewHolder>(DiffCall
             binding.tvHour.text = alarm.start_hour
             "${alarm.repetition_type} ${alarm.repetition_time}".also { binding.tvDetailsRepetitions.text = it }
             binding.tvDetailsMessage.text = alarm.message
+            if(alarm.status){
+                binding.swStatus.isChecked = true
+            } else {
+                binding.swStatus.isChecked = false
+            }
+
+
+            // DETAILS
+
+            binding.llDetails.visibility = View.GONE
+            var detailsVisibility = false
+
+            binding.ivDetail.setOnClickListener {
+
+                if(detailsVisibility){
+                    binding.llDetails.visibility = View.GONE
+                    detailsVisibility = false
+                    binding.ivDetail.rotation = 0F
+                } else {
+                    binding.llDetails.visibility = View.VISIBLE
+                    detailsVisibility = true
+                    binding.ivDetail.rotation = 180F
+                }
+
+            }
+
+            // DELETE ALARM
+
+            binding.ivDelete.setOnClickListener {
+                clickListener?.onClickListener("delete", alarm.id, !alarm.status)
+            }
+            // CHANGE STATUS
+            binding.swStatus.setOnClickListener{
+                clickListener?.onClickListener("status", alarm.id, !alarm.status)
+            }
+
 
         }
 
@@ -75,7 +115,7 @@ class AlarmsAdapter: ListAdapter<Alarm, AlarmsAdapter.AlarmsViewHolder>(DiffCall
     // Listener
 
     interface ClickListener {
-        fun onClickListener (string: String)
+        fun onClickListener (string: String, position: Int, status: Boolean)
     }
 
     fun setOnClickListener(clickListener : ClickListener){

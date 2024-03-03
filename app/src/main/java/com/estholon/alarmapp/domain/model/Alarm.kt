@@ -13,4 +13,5 @@ data class Alarm (
     @ColumnInfo(name="repetition_type") var repetition_type: String,
     @ColumnInfo(name="repetition_time") var repetition_time: Int,
     @ColumnInfo(name="message") var message: String,
+    @ColumnInfo(name="status") var status: Boolean
 )
