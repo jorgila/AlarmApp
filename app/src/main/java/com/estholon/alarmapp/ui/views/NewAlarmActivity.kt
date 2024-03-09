@@ -15,6 +15,7 @@ import com.estholon.alarmapp.domain.broadcast.AlarmReceiver
 import com.estholon.alarmapp.data.adapters.StringsListAdapter
 import com.estholon.alarmapp.databinding.ActivityNewAlarmBinding
 import com.estholon.alarmapp.databinding.LiStringsListBinding
+import com.estholon.alarmapp.domain.model.Alarm
 import com.estholon.alarmapp.domain.providers.RepetitionTypesProvider
 import com.estholon.alarmapp.ui.viewModels.NewAlarmActivityViewModel
 import com.estholon.alarmapp.ui.viewModels.NewAlarmActivityViewModelFactory
@@ -86,7 +87,8 @@ class NewAlarmActivity : AppCompatActivity() {
                     binding.tieRepetitionType.text.toString(),
                     binding.tieRepetition.text.toString().toInt(),
                     binding.tieMessage.text.toString(),
-                    true
+                    true,
+                    this
                 )
 
                 val intent = Intent(this,MainActivity::class.java)
@@ -132,11 +134,6 @@ class NewAlarmActivity : AppCompatActivity() {
         alertDialog.window!!.setGravity(Gravity.CENTER)
         alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         alertDialog.show()
-    }
-
-    private fun initAlarm() {
-        val broadcastReceiver = AlarmReceiver()
-        broadcastReceiver.setAlarm(this, TimeUnit.MINUTES.toMillis(1))
     }
 
     fun calendarPicker(view: TextInputEditText) {

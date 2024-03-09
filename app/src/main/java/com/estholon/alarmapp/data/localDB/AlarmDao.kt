@@ -13,6 +13,9 @@ interface AlarmDao {
     @Query("SELECT * FROM Alarm")
     suspend fun selectAlarmAll(): MutableList<Alarm>
 
+    @Query("SELECT MAX(id) FROM Alarm")
+    suspend fun selectMaxId() : Int?
+
     @Query("DELETE FROM Alarm WHERE id = :id")
     suspend fun deleteAlarm(id : Int)
 

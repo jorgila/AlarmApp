@@ -9,6 +9,8 @@ import com.estholon.alarmapp.data.adapters.AlarmsAdapter
 import com.estholon.alarmapp.data.localDB.AlarmDao
 import com.estholon.alarmapp.data.localDB.AlarmDataSourceLocal
 import com.estholon.alarmapp.databinding.ActivityMainBinding
+import com.estholon.alarmapp.domain.broadcast.AlarmReceiver
+import com.estholon.alarmapp.domain.model.Alarm
 import com.estholon.alarmapp.ui.viewModels.MainActivityViewModel
 import com.estholon.alarmapp.ui.viewModels.MainActivityViewModelFactory
 
@@ -61,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                         viewModel.deleteAlarm(id)
                     }
                     "status" -> {
-                        viewModel.changeStatus(id,status)
+                        viewModel.changeStatus(id,status,this@MainActivity)
                     }
                 }
             }

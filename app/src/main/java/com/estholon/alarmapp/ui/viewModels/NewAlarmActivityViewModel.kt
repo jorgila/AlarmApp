@@ -1,6 +1,8 @@
 package com.estholon.alarmapp.ui.viewModels
 
 import android.app.Application
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -8,8 +10,10 @@ import androidx.room.ColumnInfo
 import androidx.room.PrimaryKey
 import com.estholon.alarmapp.data.localDB.AlarmDao
 import com.estholon.alarmapp.data.localDB.AppDatabase
+import com.estholon.alarmapp.domain.broadcast.AlarmReceiver
 import com.estholon.alarmapp.domain.model.Alarm
 import kotlinx.coroutines.launch
+import java.util.Calendar
 
 class NewAlarmActivityViewModel(private val application: Application) : ViewModel() {
 
@@ -27,23 +31,34 @@ class NewAlarmActivityViewModel(private val application: Application) : ViewMode
         repetition_type: String,
         repetition_time: Int,
         message: String,
-        status: Boolean
+        status: Boolean,
+        context: Context
     ){
 
         viewModelScope.launch {
-            alarmDao.insertAlarm(
-                Alarm(
-                    0,
-                    title,
-                    start_date,
-                    start_hour,
-                    repetition_type,
-                    repetition_time,
-                    message,
-                    status
-                )
+            var id = alarmDao.selectMaxId()?.plus(1) ?: 0
+            var alarm = Alarm(
+                id,
+                title,
+                start_date,
+                start_hour,
+                repetition_type,
+                repetition_time,
+                message,
+                status
             )
+
+            alarmDao.insertAlarm(
+                alarm
+            )
+            initAlarm(context, alarm)
         }
+
+    }
+
+
+    private fun initAlarm(context: Context, alarm: Alarm) {
+        AlarmReceiver.setAlarm(context, alarm)
     }
 
 }

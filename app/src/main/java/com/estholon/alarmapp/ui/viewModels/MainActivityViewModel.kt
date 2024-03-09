@@ -1,6 +1,7 @@
 package com.estholon.alarmapp.ui.viewModels
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.estholon.alarmapp.data.localDB.AlarmDao
 import com.estholon.alarmapp.data.localDB.AppDatabase
+import com.estholon.alarmapp.domain.broadcast.AlarmReceiver
 import com.estholon.alarmapp.domain.model.Alarm
 import kotlinx.coroutines.launch
 import java.util.Calendar
@@ -21,6 +23,10 @@ class MainActivityViewModel(val application: Application) : ViewModel() {
 
     var listOfAlarms : MutableLiveData<MutableList<Alarm>> = MutableLiveData()
         private set
+
+    init {
+        val alarmReceiver = AlarmReceiver()
+    }
 
     fun refresh(){
         viewModelScope.launch {
@@ -74,9 +80,12 @@ class MainActivityViewModel(val application: Application) : ViewModel() {
         refresh()
     }
 
-    fun changeStatus(id: Int, status: Boolean) {
+    fun changeStatus(id: Int, status: Boolean,context:Context) {
         viewModelScope.launch {
             alarmDao.changeStatus(id, status)
+        }
+        if(status==false){
+            AlarmReceiver.cancelAlarm(context,id)
         }
         refresh()
     }
