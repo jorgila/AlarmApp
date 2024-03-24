@@ -1,6 +1,7 @@
 package com.estholon.alarmapp.ui.views
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import com.estholon.alarmapp.data.localDB.AlarmDataSourceLocal
 import com.estholon.alarmapp.databinding.ActivityMainBinding
 import com.estholon.alarmapp.domain.broadcast.AlarmReceiver
 import com.estholon.alarmapp.domain.model.Alarm
+import com.estholon.alarmapp.domain.permissions.PermissionUtil
 import com.estholon.alarmapp.ui.viewModels.MainActivityViewModel
 import com.estholon.alarmapp.ui.viewModels.MainActivityViewModelFactory
 
@@ -39,16 +41,26 @@ class MainActivity : AppCompatActivity() {
         initObservers()
     }
 
+    private fun initUI() {
+        rv()
+    }
+
     private fun initObservers() {
         viewModel.listOfAlarms.observe(this){
             adapter.submitList(it)
         }
     }
 
-    private fun initUI() {
-        rv()
+    private fun initListeners() {
+        binding.btnAdd.setOnClickListener{
+            if(PermissionUtil.checkNotificationPermission(this@MainActivity)) {
+                val intent = Intent(this, NewAlarmActivity::class.java)
+                startActivity(intent)
+            }else{
+                PermissionUtil.requestNotificationPermission(this@MainActivity)
+            }
+        }
     }
-
     private fun rv(){
         viewModel.refresh()
         adapter.submitList(viewModel.listOfAlarms.value)
@@ -71,11 +83,19 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-    private fun initListeners() {
-        binding.btnAdd.setOnClickListener{
-            val intent = Intent(this, NewAlarmActivity::class.java)
-            startActivity(intent)
+        if (requestCode == PermissionUtil.NOTIFICATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                val intent = Intent(this, NewAlarmActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
+
 }

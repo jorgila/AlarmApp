@@ -15,261 +15,277 @@
         />
 
 
-    <!-- TITTLE -->
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/ab"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="NUEVA ALARMA"
-        android:textSize="20sp"
-        android:layout_margin="18dp"
-        />
-
-    <!-- TITTLE -->
-
-    <TextView
-        android:id="@+id/tvTitleTitle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Título:"
-        android:textSize="16sp"
-        android:layout_marginVertical="8dp"
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/tilTitle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center"
-        app:boxBackgroundMode="filled"
-        app:hintEnabled="true"
-        app:expandedHintEnabled="false"
-        android:paddingTop="8dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieTitle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:singleLine="true"
-            android:textSize="@dimen/mfs"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- DATE -->
-
-    <TextView
-        android:id="@+id/tvDateTittle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Fecha:"
-        android:textSize="16sp"
-        android:layout_marginVertical="8dp"
-
-        />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/tilDate"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvDateTittle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center"
-        app:boxBackgroundMode="filled"
-        app:hintEnabled="true"
-        app:expandedHintEnabled="false"
-        android:paddingTop="8dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieDate"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:singleLine="true"
-            android:textSize="@dimen/mfs"
-            android:inputType="none"
-            android:editable="false"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- HOUR -->
-
-    <TextView
-        android:id="@+id/tvHourTittle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilDate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Hora:"
-        android:textSize="16sp"
-        android:layout_marginVertical="8dp"
-
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/tilHour"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvHourTittle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center"
-        app:boxBackgroundMode="filled"
-        app:hintEnabled="true"
-        app:expandedHintEnabled="false"
-        android:paddingTop="8dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieHour"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:singleLine="true"
-            android:textSize="@dimen/mfs"
-            android:editable="false"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <!-- REPETITION -->
-
-    <TextView
-        android:id="@+id/tvRepetitionTittle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilHour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Repetición:"
-        android:textSize="16sp"
-        android:layout_marginVertical="8dp"
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/tilRepetitionType"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvRepetitionTittle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center"
-        app:boxBackgroundMode="filled"
-        app:hintEnabled="true"
-        app:expandedHintEnabled="false"
-        android:paddingTop="8dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieRepetitionType"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:singleLine="true"
-            android:textSize="@dimen/mfs"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/tilRepetition"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tilRepetitionType"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center"
-        app:boxBackgroundMode="filled"
-        app:hintEnabled="true"
-        app:expandedHintEnabled="false"
-        android:paddingTop="8dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieRepetition"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:singleLine="true"
-            android:textSize="@dimen/mfs"
-            android:inputType="number"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- MESSAGE -->
-
-    <TextView
-        android:id="@+id/tvMessageTittle"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tilRepetition"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Mensaje:"
-        android:textSize="16sp"
-        android:layout_marginVertical="8dp"
-
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-
-        android:id="@+id/tilMessage"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvMessageTittle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center"
-        app:boxBackgroundMode="filled"
-        app:hintEnabled="true"
-        app:expandedHintEnabled="false"
-        android:paddingTop="8dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tieMessage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textMultiLine"
-            android:lines="3"
-            android:textSize="@dimen/mfs"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <!-- BUTTON -->
-
-    <Button
-        android:id="@+id/btnAdd"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tilMessage"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/ab"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="18dp"
-        android:text="Añadir"
-        />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <!-- TITTLE -->
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="NUEVA ALARMA"
+            android:textSize="20sp"
+            android:layout_margin="18dp"
+            />
+
+        <!-- TITTLE -->
+
+        <TextView
+            android:id="@+id/tvTitleTitle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Título:"
+            android:textSize="16sp"
+            android:layout_marginVertical="8dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/tilTitle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="filled"
+            app:hintEnabled="true"
+            app:expandedHintEnabled="false"
+            android:paddingTop="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:textSize="@dimen/mfs"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- DATE -->
+
+        <TextView
+            android:id="@+id/tvDateTittle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tilTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Fecha:"
+            android:textSize="16sp"
+            android:layout_marginVertical="8dp"
+
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/tilDate"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvDateTittle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="filled"
+            app:hintEnabled="true"
+            app:expandedHintEnabled="false"
+            android:paddingTop="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:textSize="@dimen/mfs"
+                android:inputType="none"
+                android:editable="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- HOUR -->
+
+        <TextView
+            android:id="@+id/tvHourTittle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tilDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Hora:"
+            android:textSize="16sp"
+            android:layout_marginVertical="8dp"
+
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/tilHour"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvHourTittle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="filled"
+            app:hintEnabled="true"
+            app:expandedHintEnabled="false"
+            android:paddingTop="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieHour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:textSize="@dimen/mfs"
+                android:editable="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- REPETITION -->
+
+        <TextView
+            android:id="@+id/tvRepetitionTittle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tilHour"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Repetición:"
+            android:textSize="16sp"
+            android:layout_marginVertical="8dp"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/tilRepetitionType"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvRepetitionTittle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="filled"
+            app:hintEnabled="true"
+            app:expandedHintEnabled="false"
+            android:paddingTop="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieRepetitionType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:textSize="@dimen/mfs"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/tilRepetition"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tilRepetitionType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="filled"
+            app:hintEnabled="true"
+            app:expandedHintEnabled="false"
+            android:paddingTop="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieRepetition"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:textSize="@dimen/mfs"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- MESSAGE -->
+
+        <TextView
+            android:id="@+id/tvMessageTittle"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tilRepetition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Mensaje:"
+            android:textSize="16sp"
+            android:layout_marginVertical="8dp"
+
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/tilMessage"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvMessageTittle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="filled"
+            app:hintEnabled="true"
+            app:expandedHintEnabled="false"
+            android:paddingTop="8dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:lines="3"
+                android:textSize="@dimen/mfs"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- BUTTON -->
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tilMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="18dp"
+            android:text="Añadir"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
